@@ -1,1 +1,144 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+/**
+ * @author
+ * @Version 1.0
+ * @since 5-3-22
+ */
+
+public class Pokemon
+{
+    //A. variables
+    private String name;
+    private int level;
+    private int health;
+    private int attack;
+    private HashMap<String, Integer> Attacks = new HashMap<String,Integer>();
+    private String type;
+
+    // methods
+
+
+    /**
+     * Getters for all variables
+     *
+     */
+    public String getName() {
+        return name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+
+    /**
+     * Setters for all variables
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public void setAttack(int attack) {
+        attack = attack;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    //B. constructors
+    public Pokemon()
+    {
+        name = "no name";
+        level = 0;
+        health = 0;
+        attack = 0;
+        type = "no type";
+    }
+
+    /**
+     *Sets all of the variables for the pokemon
+     * @param newName
+     * @param newLevel
+     * @param newHealth
+     * @param newAttack
+     * @param newType
+     */
+    public Pokemon(String newName, int newLevel, int newHealth,
+                   int newAttack, String newType)
+    {
+        name = newName;
+        level = newLevel;
+        health = newHealth;
+        attack = newAttack;
+        type = newType;
+    }
+
+    public void addAttack(String givenAttack)
+    {
+            Attacks.put(givenAttack,attack);
+    }
+
+    //C. additional methods
+
+    /**
+     *
+     * @return string with all variables from the class
+     */
+    public String toString()
+    {
+        return this.getName() +", " + this.getLevel() + ", " + this.getHealth() + ", " +
+                this.getAttack() + this.getType();
+    }
+
+    /**
+     * compares 2 Pokemons to see if they're equal
+     * @param other Pokemon
+     * @return true/false
+     */
+    public boolean equals(Pokemon other)
+    {
+        return this.level == other.level &&
+                this.attack == other.attack &&
+                this.health == other.health &&
+                this.name.equalsIgnoreCase(other.name) &&
+                this.type.equalsIgnoreCase(other.type);
+    }
+
+    public static void readInput()
+    {
+        Scanner kb =new Scanner(System.in);
+        System.out.println("Enter the Name of Pokemon");
+    }
+
+    public void writeOutput()
+    {
+        System.out.println("Type: "+type);
+        System.out.println("Name: "+name);
+        System.out.println("Level: "+level);
+        System.out.println("Health: "+health);
+        System.out.println("Attack: "+attack);
+    }
+}
 
