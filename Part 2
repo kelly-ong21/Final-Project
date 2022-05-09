@@ -1,1 +1,51 @@
+package com.CSCI185;
+
+import java.util.ArrayList;
+
+public class Team {
+    //A. Variables
+    private String trainer;
+    private String gym;
+    private ArrayList <Pokemon> members = new ArrayList<Pokemon>();
+    String saveFile = "teamData.record";
+
+    //B. Methods
+
+    /**
+     * Accessor and Mutator methods for all variables
+     * @return type
+     */
+    public String getTrainer() {
+        return trainer;
+    }
+
+    public void setTrainer(String trainer) {
+        this.trainer = trainer;
+    }
+
+    public String getGym() {
+        return gym;
+    }
+
+    public void setGym(String gym) {
+        this.gym = gym;
+    }
+
+    public ArrayList<Pokemon> getMembers() {
+        return members;
+    }
+
+    public void setMembers(ArrayList<Pokemon> members) {
+        this.members = members;
+    }
+
+    public String getSaveFile() {
+        return saveFile;
+    }
+
+    public void setSaveFile(String saveFile) {
+        this.saveFile = saveFile;
+    }
+
+}
 
